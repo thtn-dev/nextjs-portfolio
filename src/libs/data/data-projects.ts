@@ -29,8 +29,8 @@ export const PROJECTS: ProjectType[] = [
       'TypeScript',
       'Material-UI'
     ],
-    github: 'https://github.com',
-    demo: 'https://demo.com',
+    github: 'https://github.com/thtn-dev/DatPhongNhanh',
+    demo: 'https://github.com/thtn-dev/DatPhongNhanh',
     privacy: 'public',
     member: 1,
     role: 'Fullstack'

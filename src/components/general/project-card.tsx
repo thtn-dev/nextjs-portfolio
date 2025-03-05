@@ -97,7 +97,7 @@ function ProjectCard({
             <div className='mt-4 flex items-center gap-2'>
               {github && (
                 <Button variant={'default'} asChild>
-                  <Link href={github}>
+                  <Link target='_blank' href={github}>
                     <Github />
                   </Link>
                 </Button>
