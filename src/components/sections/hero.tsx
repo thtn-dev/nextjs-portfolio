@@ -7,6 +7,7 @@ import PingDot from '../general/ping-dot';
 import { Github, Linkedin, MapPinned } from 'lucide-react';
 import { Button } from '../ui/button';
 import Container from '../layouts/container';
+import { AuroraText } from '../magicui/aurora-text';
 
 export default function PortfolioHero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,7 +26,13 @@ export default function PortfolioHero() {
           className='mb-8 w-full md:mb-0 md:w-1/2'
         >
           <h1 className='mb-4 text-4xl font-bold md:text-5xl'>
-            {"Hi I'am Trung Nam"}
+            {"Hi I'am "}{' '}
+            <AuroraText
+              speed={2}
+              colors={['#E53935', '#689f38', '#FDD228', '#5DE2E7']}
+            >
+              Trung Nam
+            </AuroraText>
           </h1>
           <p className='mb-6'>
             {
@@ -58,9 +65,11 @@ export default function PortfolioHero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className='flex w-full justify-center md:w-1/2 md:justify-end'
         >
-          <div className='relative h-80 w-64 overflow-hidden rounded-lg shadow-xl md:h-96 md:w-72'>
+          <div className='relative h-80 w-64 overflow-hidden rounded-[0.25rem] opacity-80 shadow-xl md:h-96 md:w-72'>
+           
+
             <Image
-              src='/images/simson.jpeg'
+              src='/images/hero.png'
               alt='John Doe Portrait'
               fill
               style={{ objectFit: 'cover', position: 'absolute' }}

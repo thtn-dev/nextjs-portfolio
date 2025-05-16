@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { cn } from '@/libs/utils';
+import { cn } from '@/lib/utils';
 import { Card, CardContent } from '../ui/card';
 import { Badge } from '../ui/badge';
 import { Button } from '../ui/button';
@@ -11,8 +11,9 @@ import {
   Users2
 } from 'lucide-react';
 import Link from 'next/link';
-import { ProjectType } from '@/libs/data/data-projects';
+import { ProjectType } from '@/lib/data/data-projects';
 import { CollapsibleText } from './collapsible-text';
+import { ShineBorder } from '../magicui/shine-border';
 
 interface ProjectCardProps extends ProjectType {
   imageAlt: string;
@@ -33,7 +34,8 @@ function ProjectCard({
   role
 }: ProjectCardProps) {
   return (
-    <Card className='overflow-hidden'>
+    <Card className='relative overflow-hidden border-none shadow-none'>
+      <ShineBorder shineColor={['#A07CFE', '#FE8FB5', '#FFBE7B']} />
       <CardContent className='flex flex-col p-6 lg:flex-row'>
         <div
           className={cn(

@@ -15,6 +15,7 @@ import {
   Check
 } from 'lucide-react';
 import Container from '../layouts/container';
+import { TextHoverEffect } from '../ui/text-hover-effect';
 
 export function ContactSection() {
   const { toast } = useToast();
@@ -104,6 +105,9 @@ export function ContactSection() {
             </div>
           </CardContent>
         </Card>
+      </div>
+      <div className='container mx-auto max-w-2xl'>
+        <TextHoverEffect text='thtn-dev' />
       </div>
     </Container>
   );

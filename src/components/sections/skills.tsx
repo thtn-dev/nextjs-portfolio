@@ -1,4 +1,4 @@
-import SKILLS from '@/libs/data/data-skills';
+import SKILLS from '@/lib/data/data-skills';
 import Container from '../layouts/container';
 import SkillDetail from '../general/skill';
 
@@ -6,7 +6,7 @@ function SkillSection() {
   return (
     <Container id='skills'>
       <div className='flex w-full justify-center'>
-        <span className='rounded-full bg-zinc-200 px-4 py-1 text-sm dark:bg-zinc-500'>
+        <span className='rounded-full bg-secondary px-4 py-1 text-sm'>
           Skills
         </span>
       </div>

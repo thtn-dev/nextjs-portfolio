@@ -1,4 +1,4 @@
-import { PROJECTS } from '@/libs/data/data-projects';
+import { PROJECTS } from '@/lib/data/data-projects';
 import Container from '../layouts/container';
 import ProjectCard from '../general/project-card';
 
@@ -6,7 +6,7 @@ function ProjectsSection() {
   return (
     <Container className='bg-zinc-50 dark:bg-zinc-900'>
       <div className='flex w-full justify-center'>
-        <span className='rounded-full bg-zinc-200 px-4 py-1 text-sm dark:bg-zinc-500'>
+        <span className='rounded-full bg-secondary px-4 py-1 text-sm'>
           Projects
         </span>
       </div>

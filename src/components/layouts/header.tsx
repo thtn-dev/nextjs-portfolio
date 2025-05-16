@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Logo from '../general/logo';
 import ThemeSwitcher from '../general/theme-switcher';
-import { NAV_LINKS } from '@/libs/data/nav-links';
+import { NAV_LINKS } from '@/lib/data/nav-links';
 import MyCV from '../general/my-cv';
 import {
   Sheet,
@@ -15,7 +15,7 @@ import {
 import useScroll from '@/hooks/use-scroll';
 import { useEffect, useState } from 'react';
 import useWindowSize from '@/hooks/use-window-size';
-import { cn } from '@/libs/utils';
+import { cn } from '@/lib/utils';
 import { Button } from '../ui/button';
 import { Menu } from 'lucide-react';
 
