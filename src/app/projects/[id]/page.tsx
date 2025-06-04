@@ -1,33 +1,33 @@
-import { notFound } from "next/navigation"
-import type { Metadata } from "next"
-import ProjectDetailHeader from "../_components/project-detail-header"
-import ProjectOverview from "../_components/project-overview"
-import ProjectMedia from "../_components/project-media"
-import ProjectChallenges from "../_components/project-challenges"
-import ProjectTechnologies from "../_components/project-technologies"
-import ProjectMetrics from "../_components/project-metrics"
-import ProjectNavigation from "../_components/project-navigation"
-import projectsData from "@/data/projects.json"
-
-interface ProjectPageProps {
-  params: {
-    id: string
-  }
-}
+import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import ProjectDetailHeader from '../_components/project-detail-header';
+import ProjectOverview from '../_components/project-overview';
+import ProjectMedia from '../_components/project-media';
+import ProjectChallenges from '../_components/project-challenges';
+import ProjectTechnologies from '../_components/project-technologies';
+import ProjectMetrics from '../_components/project-metrics';
+import ProjectNavigation from '../_components/project-navigation';
+import projectsData from '@/data/projects.json';
+import { use } from 'react';
 
 export async function generateStaticParams() {
   return projectsData.projects.map((project) => ({
-    id: project.id,
-  }))
+    id: project.id
+  }));
 }
 
-export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
-  const project = projectsData.projects.find((p) => p.id === params.id)
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const project = projectsData.projects.find((p) => p.id === id);
 
   if (!project) {
     return {
-      title: "Project Not Found",
-    }
+      title: 'Project Not Found'
+    };
   }
 
   return {
@@ -36,28 +36,37 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     openGraph: {
       title: project.title,
       description: project.description,
-      images: [project.image],
-    },
-  }
+      images: [project.image]
+    }
+  };
 }
 
-export default function ProjectDetailPage({ params }: ProjectPageProps) {
-  const project = projectsData.projects.find((p) => p.id === params.id)
+export default function ProjectDetailPage({
+  params
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = use(params);
+  const project = projectsData.projects.find((p) => p.id === id);
 
   if (!project) {
-    notFound()
+    notFound();
   }
 
-  const currentIndex = projectsData.projects.findIndex((p) => p.id === params.id)
-  const previousProject = currentIndex > 0 ? projectsData.projects[currentIndex - 1] : null
-  const nextProject = currentIndex < projectsData.projects.length - 1 ? projectsData.projects[currentIndex + 1] : null
+  const currentIndex = projectsData.projects.findIndex((p) => p.id === id);
+  const previousProject =
+    currentIndex > 0 ? projectsData.projects[currentIndex - 1] : null;
+  const nextProject =
+    currentIndex < projectsData.projects.length - 1
+      ? projectsData.projects[currentIndex + 1]
+      : null;
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
+    <div className='min-h-screen bg-background'>
+      <div className='container mx-auto max-w-6xl px-4 py-8'>
         <ProjectDetailHeader project={project} />
 
-        <div className="space-y-16">
+        <div className='space-y-16'>
           <ProjectOverview project={project} />
           <ProjectMedia project={project} />
           <ProjectChallenges project={project} />
@@ -65,8 +74,11 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
           <ProjectMetrics project={project} />
         </div>
 
-        <ProjectNavigation previousProject={previousProject} nextProject={nextProject} />
+        <ProjectNavigation
+          previousProject={previousProject}
+          nextProject={nextProject}
+        />
       </div>
     </div>
-  )
+  );
 }

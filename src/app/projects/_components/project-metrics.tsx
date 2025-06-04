@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { TrendingUp, Users, Zap, Star, Quote } from 'lucide-react';
 
 interface Metrics {
-  [key: string]: string;
+  [key: string]: string | number | undefined;
 }
 
 interface Testimonial {
