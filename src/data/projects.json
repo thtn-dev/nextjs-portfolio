@@ -1,48 +1,50 @@
 {
     "projects": [
         {
-            "id": "ecommerce-dashboard",
-            "title": "E-Commerce Dashboard",
-            "description": "A comprehensive admin dashboard for managing e-commerce operations with real-time analytics, inventory management, and order processing capabilities.",
-            "longDescription": "Built a full-stack e-commerce dashboard that handles complex business operations including inventory tracking, order management, customer analytics, and revenue reporting. The application features real-time updates, advanced filtering, and export capabilities.",
-            "overview": "This project was born out of the need to streamline e-commerce operations for small to medium businesses. The dashboard provides a centralized platform for managing all aspects of an online store, from inventory to customer relationships.",
+            "id": "ai-explorer",
+            "title": "LLM Powered Search Assistant",
+            "description": "An intelligent chatbot that leverages LLMs to understand user queries, search the internet, and provide summarized, conversational answers.",
+            "longDescription": "Developed an advanced chatbot capable of natural language understanding through Large Language Models (LLMs). This chatbot dynamically queries internet search engines, processes results, and synthesizes information to deliver concise, relevant, and conversational responses to user inquiries.",
+            "overview": "This project aims to revolutionize information retrieval by creating a chatbot that not only fetches search results but also understands context, filters noise, and presents information in an easily digestible conversational format, going beyond traditional keyword-based search.",
             "goals": [
-                "Create an intuitive admin interface for non-technical users",
-                "Implement real-time data synchronization across all modules",
-                "Develop comprehensive analytics and reporting features",
-                "Ensure scalability to handle growing business needs",
-                "Provide mobile-responsive design for on-the-go management"
+                "Develop a natural and intuitive conversational interface for users.",
+                "Integrate with multiple reliable search APIs to ensure broad information coverage.",
+                "Implement effective LLM prompting techniques for summarization and answer generation.",
+                "Ensure low latency for user queries.",
+                "Design for scalability to handle increasing user load and query complexity.",
+                "Provide source citation capabilities for transparency and verifiability."
             ],
             "challenges": [
                 {
-                    "challenge": "Real-time Data Synchronization",
-                    "solution": "Implemented WebSocket connections with Redis for real-time updates across multiple dashboard instances. Used optimistic updates on the frontend to ensure smooth user experience while maintaining data consistency."
+                    "challenge": "Retrieving Relevant Search Results",
+                    "solution": "Implemented dynamic query generation based on LLM's understanding of user intent, combined with filtering and ranking of search results before LLM processing."
                 },
                 {
-                    "challenge": "Complex Data Relationships",
-                    "solution": "Designed a normalized database schema with Prisma ORM, implementing efficient queries with proper indexing and relationship management to handle complex joins between orders, products, and customers."
+                    "challenge": "LLM Hallucination and Accuracy",
+                    "solution": "Utilized Retrieval Augmented Generation (RAG) by providing search results as context to the LLM, and designed prompts to prioritize factual information from the provided context. Implemented source citation."
                 },
                 {
-                    "challenge": "Performance with Large Datasets",
-                    "solution": "Implemented server-side pagination, data virtualization for large tables, and intelligent caching strategies using React Query to minimize API calls and improve load times."
+                    "challenge": "Response Latency (Search + LLM Processing)",
+                    "solution": "Optimized API calls to search engines, used efficient LLM models (or model quantization where applicable), and explored streaming responses to improve perceived performance."
                 }
             ],
             "technicalDetails": {
-                "architecture": "Full-stack application with Next.js frontend and API routes, PostgreSQL database, and Redis for caching",
-                "deployment": "Deployed on Vercel with Supabase for database hosting and Redis Cloud for caching",
-                "testing": "Comprehensive test suite with Jest, React Testing Library, and Cypress for E2E testing",
-                "performance": "Achieved 95+ Lighthouse scores across all metrics with code splitting and image optimization"
+                "architecture": "Backend using Python (e.g., Flask/FastAPI) for LLM integration and search API orchestration. Frontend using a modern JavaScript framework (e.g., React, Vue) for the chat interface. Vector database (e.g., Pinecone, FAISS) for RAG if implemented.",
+                "llm_integration": "Utilized LLM APIs (e.g., OpenAI GPT-4, Google Gemini) via libraries like Langchain or LlamaIndex for flow management, prompting, and model interaction.",
+                "search_integration": "Integrated with search APIs like Google Custom Search API, Bing Search API, or other specialized search APIs.",
+                "deployment": "Backend deployed on a cloud platform (e.g., AWS Lambda, Google Cloud Functions, Vercel Serverless) and frontend on a static hosting service (e.g., Vercel, Netlify, GitHub Pages).",
+                "testing": "Unit tests for backend logic (Python unittest/pytest), frontend component tests (e.g., Jest, Vitest), and end-to-end tests for conversational flows (e.g., custom scripts)."
             },
-            "image": "/placeholder.svg?height=400&width=600",
+            "image": "/images/projects/screenshot.png",
             "media": {
                 "images": [
-                    "/placeholder.svg?height=600&width=800",
-                    "/placeholder.svg?height=600&width=800",
-                    "/placeholder.svg?height=600&width=800",
-                    "/placeholder.svg?height=600&width=800"
+                    "/images/projects/image-1.png?height=600&width=800",
+                    "/images/projects/image-2.png?height=600&width=800",
+                    "/images/projects/image-3.png?height=600&width=800",
+                    "/images/projects/image-1.png?height=600&width=800"
                 ],
                 "videos": [
-                    "/placeholder.svg?height=400&width=600"
+                    "/images/projects/image-1.png?height=600&width=800"
                 ],
                 "gifs": [
                     "/placeholder.svg?height=300&width=500",
@@ -50,39 +52,43 @@
                 ]
             },
             "technologies": [
+                "Python",
+                "FastAPI",
+                "OpenAI API",
+                "Langchain",
+                "SearXNG",
+                "LLM models",
+                "React",
                 "Next.js",
                 "TypeScript",
-                "Prisma",
                 "PostgreSQL",
                 "Tailwind CSS",
-                "Chart.js",
-                "Redis",
-                "WebSocket"
+                "Redis"
             ],
             "category": "Full Stack",
-            "status": "Completed",
-            "githubUrl": "https://github.com/username/ecommerce-dashboard",
-            "liveUrl": "https://ecommerce-dashboard-demo.vercel.app",
-            "startDate": "2024-01-15",
-            "endDate": "2024-03-20",
-            "duration": "2 months",
+            "status": "In Progress",
+            "githubUrl": "https://github.com/thtn-dev/ai-explorer",
+            "liveUrl": "https://github.com/thtn-dev/ai-explorer",
+            "startDate": "2025-05-15",
+            "endDate": "2025-07-15",
+            "duration": "Pending",
             "featured": true,
             "highlights": [
-                "Real-time analytics with 99.9% uptime",
-                "Processed over 10,000 orders",
-                "Reduced admin workload by 60%",
-                "Mobile-responsive design"
+                "Provides conversational answers, not just a list of links.",
+                "Summarizes information from multiple sources.",
+                "Cites sources for increased transparency.",
+                "Capable of handling contextual follow-up questions (if designed)."
             ],
             "metrics": {
-                "users": "500+",
-                "performance": "95+ Lighthouse Score",
-                "uptime": "99.9%",
-                "loadTime": "< 2s"
+                "users": "50+ beta testers",
+                "response_time": "Average query response time: < 5 seconds",
+                "accuracy_rate": "Source-grounded answer accuracy: >85% (manually measured)",
+                "satisfaction_score": "User satisfaction score: 4.2/5 (from beta tester feedback)"
             },
             "testimonial": {
-                "text": "This dashboard transformed how we manage our online store. The real-time updates and intuitive interface saved us hours of work every day.",
-                "author": "Sarah Johnson",
-                "role": "Store Manager"
+                "text": "This chatbot has truly changed how I do quick research! It understands what I'm asking and provides summarized answers with sources, saving me so much time.",
+                "author": "Alex Nguyen",
+                "role": "Junior Researcher"
             }
         },
         {

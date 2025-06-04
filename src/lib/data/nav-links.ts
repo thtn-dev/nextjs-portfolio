@@ -9,7 +9,7 @@ export const NAV_LINKS = [
   },
   {
     name: 'Projects',
-    href: '#projects'
+    href: '/projects'
   },
   {
     name: 'Experience',
