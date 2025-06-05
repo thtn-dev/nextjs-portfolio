@@ -37,19 +37,19 @@ function Header() {
         scrolled ? 'bg-background/50 backdrop-blur-md' : ''
       )}
     >
-      <div className='mx-auto flex w-full max-w-7xl items-center justify-between p-4 md:px-8'>
+      <div className='app-container flex items-center justify-between py-4'>
         <Link href='/'>
           <Logo />
         </Link>
         <ul className='hidden items-center md:flex'>
           {NAV_LINKS.map((navLink) => (
             <li key={navLink.name} className='mx-4 inline-block'>
-              <a
+              <Link
                 href={navLink.href}
                 className='font-medium text-primary hover:text-primary/80'
               >
                 {navLink.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

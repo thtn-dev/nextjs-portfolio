@@ -74,24 +74,24 @@ export default function ProjectMedia({ project }: ProjectMediaProps) {
             className='w-full'
           >
             <TabsList className='grid w-full grid-cols-3'>
-              <TabsTrigger value='images' className='flex items-center gap-2'>
+              <TabsTrigger value='images' className='flex items-center gap-1'>
                 <Images className='h-4 w-4' />
                 Screenshots
-                <Badge variant='secondary' className='ml-1'>
+                <Badge variant='secondary' className='rounded-full'>
                   {project.media.images.length}
                 </Badge>
               </TabsTrigger>
-              <TabsTrigger value='videos' className='flex items-center gap-2'>
+              <TabsTrigger value='videos' className='flex items-center gap-1'>
                 <Video className='h-4 w-4' />
                 Videos
-                <Badge variant='secondary' className='ml-1'>
+                <Badge variant='secondary' className='rounded-full'>
                   {project.media.videos.length}
                 </Badge>
               </TabsTrigger>
-              <TabsTrigger value='gifs' className='flex items-center gap-2'>
+              <TabsTrigger value='gifs' className='flex items-center gap-1'>
                 <Zap className='h-4 w-4' />
                 Demos
-                <Badge variant='secondary' className='ml-1'>
+                <Badge variant='secondary' className='rounded-full'>
                   {project.media.gifs.length}
                 </Badge>
               </TabsTrigger>
@@ -176,7 +176,7 @@ export default function ProjectMedia({ project }: ProjectMediaProps) {
         open={!!selectedImage}
         onOpenChange={() => setSelectedImage(null)}
       >
-        <DialogContent className='max-w-5xl overflow-hidden p-0'>
+        <DialogContent className='max-w-5xl overflow-hidden p-0 2xl:max-w-7xl [&>button]:hidden'>
           <div className='relative aspect-video'>
             {selectedImage && (
               <Image

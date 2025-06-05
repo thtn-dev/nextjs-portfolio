@@ -138,4 +138,8 @@ body {
   .typography {
     @apply text-primary;
   }
+
+  .app-container {
+    @apply container mx-auto max-w-7xl px-2 sm:px-4 lg:px-6;
+  }
 }
