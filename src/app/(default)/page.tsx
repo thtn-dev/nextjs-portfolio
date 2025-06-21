@@ -1,3 +1,4 @@
+import CertificatesSection from '@/components/sections/cert';
 import { ContactSection } from '@/components/sections/contact';
 import ExperiencesSection from '@/components/sections/experiences';
 import HeroSection from '@/components/sections/hero';
@@ -9,6 +10,7 @@ function HomePage() {
     <>
       <HeroSection />
       <SkillSection />
+      <CertificatesSection />
       <ProjectsSection />
       <ExperiencesSection />
       <ContactSection />
